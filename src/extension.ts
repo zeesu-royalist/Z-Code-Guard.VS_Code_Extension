@@ -31,6 +31,25 @@ export function activate(context: vscode.ExtensionContext): void {
     showCollapseAll: true,
   });
 
+  // Keep Activity Bar badge and view description synchronized with scan state
+  resultsProvider.onScanUpdate = (result) => {
+    if (result && result.status === 'success') {
+      if (result.totalCount > 0) {
+        treeView.badge = {
+          value: result.totalCount,
+          tooltip: `${result.totalCount} changed file${result.totalCount === 1 ? '' : 's'} (${result.protectedCount} protected)`,
+        };
+        treeView.description = `${result.totalCount} changed`;
+      } else {
+        treeView.badge = undefined;
+        treeView.description = 'Clean';
+      }
+    } else {
+      treeView.badge = undefined;
+      treeView.description = undefined;
+    }
+  };
+
   // Set up debounced workspace file watchers for save, create, delete, and rename events
   const watcherDisposable = setupWorkspaceWatcher(resultsProvider);
 
