@@ -3,7 +3,7 @@
   "displayName": "Z-Code-Guard",
   "description": "A free, local-first VS Code extension that explains code changes, detects regressions, evaluates risks, and protects important code boundaries.",
   "version": "0.2.0",
-  "publisher": "z-code-guard",
+  "publisher": "ZeesuRoyalist",
   "author": {
     "name": "Zeesu Royalist",
     "url": "https://zeesu-royalist.vercel.app"
