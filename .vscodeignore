@@ -1,0 +1,15 @@
+.vscode/**
+src/**
+test/**
+repository-layout/**
+docs/**
+tsconfig.json
+vitest.config.ts
+.gitignore
+.DS_Store
+**/.DS_Store
+*.log
+**/*.map
+*.vsix
+**/*.vsix
+.vscode-test/**

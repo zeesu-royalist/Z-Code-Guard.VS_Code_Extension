@@ -1,0 +1,166 @@
+{
+  "name": "z-code-guard",
+  "displayName": "Z-Code-Guard",
+  "description": "A free, local-first VS Code extension that explains code changes, detects regressions, evaluates risks, and protects important code boundaries.",
+  "version": "0.2.0",
+  "publisher": "z-code-guard",
+  "icon": "resources/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:z-code-guard.scanWorkspace",
+    "onCommand:z-code-guard.openConfiguration",
+    "onCommand:z-code-guard.configureWorkspace",
+    "onView:zCodeGuardResults"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "z-code-guard",
+          "title": "Z-Code-Guard",
+          "icon": "resources/eye-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "z-code-guard": [
+        {
+          "id": "zCodeGuardResults",
+          "name": "Z-Code-Guard Results"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "z-code-guard.scanWorkspace",
+        "title": "Z-Code-Guard: Scan Workspace",
+        "category": "Z-Code-Guard",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "z-code-guard.scanWorkspaceUnconfigured",
+        "title": "Z-Code-Guard: Scan Workspace (Unconfigured)",
+        "category": "Z-Code-Guard"
+      },
+      {
+        "command": "z-code-guard.openConfiguration",
+        "title": "Z-Code-Guard: Open Configuration",
+        "category": "Z-Code-Guard",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "z-code-guard.configureWorkspace",
+        "title": "Z-Code-Guard: Configure Workspace",
+        "category": "Z-Code-Guard",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "z-code-guard.viewDiff",
+        "title": "Z-Code-Guard: View Diff",
+        "category": "Z-Code-Guard",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "z-code-guard.recordBaseline",
+        "title": "Z-Code-Guard: Record Diagnostics Baseline",
+        "category": "Z-Code-Guard",
+        "icon": "$(bookmark)"
+      },
+      {
+        "command": "z-code-guard.toggleReviewed",
+        "title": "Z-Code-Guard: Mark / Unmark as Reviewed",
+        "category": "Z-Code-Guard",
+        "icon": "$(check)"
+      },
+      {
+        "command": "z-code-guard.openAtLine",
+        "title": "Open at Line"
+      },
+      {
+        "command": "z-code-guard.runCheck",
+        "title": "Run Project Check"
+      },
+      {
+        "command": "z-code-guard.openFile",
+        "title": "Open File"
+      },
+      {
+        "command": "z-code-guard.showDeletedNotice",
+        "title": "Show Deleted Notice"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "z-code-guard.scanWorkspace",
+          "when": "view == zCodeGuardResults",
+          "group": "navigation@1"
+        },
+        {
+          "command": "z-code-guard.recordBaseline",
+          "when": "view == zCodeGuardResults",
+          "group": "navigation@2"
+        },
+        {
+          "command": "z-code-guard.openConfiguration",
+          "when": "view == zCodeGuardResults",
+          "group": "navigation@3"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "z-code-guard.viewDiff",
+          "when": "viewItem == file_protected || viewItem == file_other",
+          "group": "inline@1"
+        },
+        {
+          "command": "z-code-guard.toggleReviewed",
+          "when": "viewItem == file_protected || viewItem == file_other",
+          "group": "inline@2"
+        }
+      ]
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "git",
+    "diff",
+    "code review",
+    "security",
+    "guard",
+    "scope",
+    "boundaries",
+    "regression",
+    "static analysis"
+  ],
+  "homepage": "https://github.com/zeesuroyalist/z-code-guard#readme",
+  "bugs": {
+    "url": "https://github.com/zeesuroyalist/z-code-guard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeesuroyalist/z-code-guard"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
