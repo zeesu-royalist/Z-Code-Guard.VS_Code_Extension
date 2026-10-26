@@ -35,7 +35,7 @@
 
 ## 🛡️ What is Z-Code-Guard?
 
-**Z-Code-Guard** is a free, local VS Code extension that lives in your sidebar like a smart code reviewer.
+**Z-Code-Guard** is a free, VS Code extension that lives in your sidebar like a smart code reviewer.
 
 Whenever you or an AI coding assistant (like GitHub Copilot, ChatGPT, or Claude) edit files in your project, Z-Code-Guard immediately inspects what changed. Instead of just showing a long list of filenames, it clearly tells you:
 - Exactly which **functions and classes** were modified.
