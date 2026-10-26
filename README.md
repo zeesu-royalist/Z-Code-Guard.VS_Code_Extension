@@ -8,6 +8,10 @@
   <strong>A free, local-first VS Code extension that explains code changes, detects regressions, evaluates risks, investigates dependencies, and protects important code boundaries.</strong>
 </p>
 
+<p align="center">
+  Developed by <strong><a href="https://zeesu-royalist.vercel.app">Zeesu Royalist</a></strong>
+</p>
+
 Z-Code-Guard transforms code review inside VS Code for both human-written and AI-generated modifications. Rather than simply listing files that were touched, Z-Code-Guard answers the crucial questions developers ask before accepting changes:
 
 1. **What changed?** (Added/deleted line counts, unified diffs, modified hunks)
@@ -194,6 +198,14 @@ npm run package
 
 ---
 
+## Author & Developer
+
+**Zeesu Royalist**
+- Website: [zeesu-royalist.vercel.app](https://zeesu-royalist.vercel.app)
+- GitHub: [@zeesu-royalist](https://github.com/zeesu-royalist)
+
+---
+
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE) — Copyright (c) 2026 [Zeesu Royalist](https://zeesu-royalist.vercel.app).

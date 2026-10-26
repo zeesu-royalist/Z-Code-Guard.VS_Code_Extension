@@ -4,6 +4,10 @@
   "description": "A free, local-first VS Code extension that explains code changes, detects regressions, evaluates risks, and protects important code boundaries.",
   "version": "0.2.0",
   "publisher": "z-code-guard",
+  "author": {
+    "name": "Zeesu Royalist",
+    "url": "https://zeesu-royalist.vercel.app"
+  },
   "icon": "resources/icon.png",
   "engines": {
     "vscode": "^1.85.0"
@@ -140,13 +144,13 @@
     "regression",
     "static analysis"
   ],
-  "homepage": "https://github.com/zeesuroyalist/z-code-guard#readme",
+  "homepage": "https://zeesu-royalist.vercel.app",
   "bugs": {
-    "url": "https://github.com/zeesuroyalist/z-code-guard/issues"
+    "url": "https://github.com/zeesu-royalist/Z-Code-Guard.VS_Code_Extension/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeesuroyalist/z-code-guard"
+    "url": "https://github.com/zeesu-royalist/Z-Code-Guard.VS_Code_Extension"
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
